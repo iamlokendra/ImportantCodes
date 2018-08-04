@@ -1,0 +1,48 @@
+#include <iostream>
+#include<algorithm>
+using namespace std;
+
+int main() {
+    string s;
+    cout<<"Enter a string : ";
+    getline(cin,s);
+
+    string temp=s;
+    string ss="";
+    string sss=s;
+    string temp2="";
+
+    reverse(sss.begin(),sss.end());
+    if(sss==s)
+        cout<<"Already a palindrome"<<endl;
+
+
+    else
+
+         for(int i=0;i<s.size();i++)
+              {
+
+
+              temp=s;
+              ss=temp.substr(0,i);                    // fetching substring
+              reverse(ss.begin(),ss.end());
+
+              temp=temp+ss;                           // appending reversed substring
+              temp2=temp;
+
+              reverse(temp.begin(),temp.end());
+
+              if(temp==temp2)
+                {
+                      i=ss.size();
+                      cout<<i<<endl<<ss<<endl<<temp2;
+                         break;
+                }
+
+
+
+
+
+                }
+    return 0;
+}
